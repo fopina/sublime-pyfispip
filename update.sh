@@ -3,7 +3,7 @@
 cd $(dirname $0)
 CURRENT=$(cd all; python -c 'import fispip; print(fispip.__version__)')
 
-virtualenv -p python3 tmp &>/dev/null
+virtualenv tmp &>/dev/null
 tmp/bin/pip install fispip &>/dev/null
 NEW=$(tmp/bin/python -c 'import fispip; print(fispip.__version__)')
 
@@ -14,7 +14,7 @@ else
 	echo "Latest version: $NEW"
 
 	rm -fr all/fispip
-	cp -a tmp/lib/python3*/site-packages/fispip all/
+	cp -a tmp/lib/python*/site-packages/fispip all/
 	echo "Updated. Create tag v$NEW and push (master and tag)"
 fi
 
