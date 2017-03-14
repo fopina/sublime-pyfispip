@@ -10,3 +10,15 @@ While this package is not published in the official repository, you can add this
 ```
 https://raw.githubusercontent.com/fopina/sublime-pyfispip/repo/repository.json
 ```
+
+Using it as dependency in your package is as easy as including a `dependencies.json` file with:
+
+```
+{
+	"*": {
+		"*": [
+			"pyfispip"
+		]
+	}
+}
+```
